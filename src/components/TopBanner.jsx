@@ -10,8 +10,8 @@ const TopBanner = () => {
       <div className="hero-overlay bg-opacity-40"></div>
       <div className="hero-content text-neutral-content text-center">
         <div className="max-w-md">
-          <h1 className="mb-5 text-3xl font-bold">
-            Let Spread Love With Others. Here we Are For Share Your Donation.
+          <h1 className="mb-5 text-4xl font-bold">
+            Let Spread Love With Others.With Your Helping Hand.
           </h1>
           <p className="mb-5">
             In the every winter season there are a lot of people who impacted by

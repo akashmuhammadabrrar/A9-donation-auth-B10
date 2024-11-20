@@ -1,8 +1,12 @@
 import React from "react";
 import TopBanner from "../components/TopBanner";
 import Status from "../components/Status";
+import Campaign from "./Campaign";
+import { useLoaderData } from "react-router-dom";
 
 const Home = () => {
+  const campaignData = useLoaderData();
+  console.log(campaignData);
   return (
     <div>
       {/* top banner */}
@@ -12,6 +16,9 @@ const Home = () => {
       </div>
       {/* heading */}
       {/* campaign */}
+      <div className="mt-10 py-10">
+        <Campaign campaignData={campaignData}></Campaign>
+      </div>
     </div>
   );
 };
