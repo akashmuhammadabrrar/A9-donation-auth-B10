@@ -31,17 +31,17 @@ const Navbar = () => {
               </Link>
             </li>
             <li>
-              <Link to="/" className=" font-bold">
+              <Link to="/campaign" className=" font-bold">
                 Donation Campaigns
               </Link>
             </li>
             <li>
-              <Link to="/" className=" font-bold">
+              <Link to="/help" className=" font-bold">
                 How to Help
               </Link>
             </li>
             <li>
-              <Link to="/" className=" font-bold">
+              <Link to="/dashboard" className=" font-bold">
                 Dashboard
               </Link>
             </li>
@@ -60,17 +60,17 @@ const Navbar = () => {
             </Link>
           </li>
           <li>
-            <Link to="/" className=" font-bold">
+            <Link to="/campaign" className=" font-bold">
               Donation Campaigns
             </Link>
           </li>
           <li>
-            <Link to="/" className=" font-bold">
+            <Link to="/help" className=" font-bold">
               How to Help
             </Link>
           </li>
           <li>
-            <Link to="/" className=" font-bold">
+            <Link to="/dashboard" className=" font-bold">
               Dashboard
             </Link>
           </li>

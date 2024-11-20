@@ -1,10 +1,32 @@
 import { createBrowserRouter } from "react-router-dom";
 import MainLayouts from "../layouts/MainLayouts";
+import Home from "../pages/Home";
+import Dashboard from "../pages/Dashboard";
+import Help from "../pages/Help";
+import Campaign from "../pages/Campaign";
 
 const routes = createBrowserRouter([
   {
     path: "/",
     element: <MainLayouts></MainLayouts>,
+    children: [
+      {
+        path: "/",
+        element: <Home></Home>,
+      },
+      {
+        path: "/dashboard",
+        element: <Dashboard></Dashboard>,
+      },
+      {
+        path: "/campaign",
+        element: <Campaign></Campaign>,
+      },
+      {
+        path: "/help",
+        element: <Help></Help>,
+      },
+    ],
   },
 ]);
 

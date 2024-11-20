@@ -1,9 +1,17 @@
 import React from "react";
+import TopBanner from "../components/TopBanner";
+import Status from "../components/Status";
 
 const Home = () => {
   return (
     <div>
-      <h2>This is my home</h2>
+      {/* top banner */}
+      <div className="min-h-[282px]">
+        <TopBanner></TopBanner>
+        <Status></Status>
+      </div>
+      {/* heading */}
+      {/* campaign */}
     </div>
   );
 };
