@@ -1,11 +1,14 @@
-import React from "react";
+import React, { useContext } from "react";
 import { FaHeart } from "react-icons/fa";
 import { Link } from "react-router-dom";
+import { AuthContext } from "../provider/AuthProvider";
 
 const Navbar = () => {
+  const { user, logOut } = useContext(AuthContext);
   return (
     <div className="navbar bg-accent fixed z-50">
       <div className="navbar-start">
+        <div>{user && user.email}</div>
         <div className="dropdown">
           <div tabIndex={0} role="button" className="btn btn-ghost lg:hidden">
             <svg
@@ -76,11 +79,20 @@ const Navbar = () => {
           </li>
         </ul>
       </div>
-      <div className="navbar-end">
-        <Link to="/auth/login" className="btn">
-          Login
-        </Link>
-      </div>
+      {user && user?.email ? (
+        <div className="navbar-end">
+          {" "}
+          <button onClick={logOut} className="btn btn-warning">
+            Logout
+          </button>
+        </div>
+      ) : (
+        <div className="navbar-end">
+          <Link to="/auth/login" className="btn btn-accent">
+            Login
+          </Link>
+        </div>
+      )}
     </div>
   );
 };
