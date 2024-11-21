@@ -3,8 +3,11 @@ import TopBanner from "../components/TopBanner";
 import Status from "../components/Status";
 import Campaign from "./Campaign";
 import { useLoaderData } from "react-router-dom";
+import { toast } from "react-toastify";
 
 const Home = () => {
+  const notify = () => toast("Wow so easy !");
+
   const campaignData = useLoaderData();
   console.log(campaignData);
   return (

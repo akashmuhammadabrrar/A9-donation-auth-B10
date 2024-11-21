@@ -9,6 +9,7 @@ import Details from "../pages/Details";
 import AuthLayout from "../layouts/AuthLayout";
 import Login from "../pages/Login";
 import Register from "../pages/Register";
+import PrivetRoute from "./PrivetRoute";
 
 const routes = createBrowserRouter([
   {
@@ -38,7 +39,11 @@ const routes = createBrowserRouter([
       },
       {
         path: "/details",
-        element: <Details></Details>,
+        element: (
+          <PrivetRoute>
+            <Details></Details>
+          </PrivetRoute>
+        ),
         loader: () => fetch("../data.json"),
       },
       {

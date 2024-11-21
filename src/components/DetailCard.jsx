@@ -1,22 +1,30 @@
 import React from "react";
+import { toast, ToastContainer } from "react-toastify";
 
 const DetailCard = ({ item }) => {
-  const { image } = item;
+  const notify = () => {
+    toast.success("donation successfully sent");
+  };
+
+  const { image, title, description } = item;
   return (
     <div className="">
       {/* details parent */}
-      <div className="flex lg:flex-row md:flex-row sm:flex-col justify-center items-center gap-4">
+      <div className="border-2 container mx-auto flex lg:flex-row md:flex-row my-4 flex-col justify-center items-center gap-4">
         {/* donate details div */}
         <div>
           <div className="card bg-base-100 w-96 ">
             <figure className="px-10 pt-10">
               <img src={image} alt="Shoes" className="rounded-xl" />
             </figure>
-            <div className="card-body items-center text-center ">
-              <h2 className="card-title">Shoes!</h2>
-              <p>If a dog chews shoes whose shoes does he choose?</p>
+            <div className="card-body items-start text-start ">
+              <h2 className="card-title">{title}</h2>
+              <p>{description}</p>
               <div className="card-actions">
-                <button className="btn btn-accent">Donate</button>
+                <button onClick={notify} className="btn btn-accent">
+                  Donate
+                </button>
+                <ToastContainer></ToastContainer>
               </div>
             </div>
           </div>
