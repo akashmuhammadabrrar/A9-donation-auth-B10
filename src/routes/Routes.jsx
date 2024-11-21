@@ -4,6 +4,8 @@ import Home from "../pages/Home";
 import Dashboard from "../pages/Dashboard";
 import Help from "../pages/Help";
 import Campaign from "../pages/Campaign";
+import About from "../pages/About";
+import Details from "../pages/Details";
 
 const routes = createBrowserRouter([
   {
@@ -13,7 +15,7 @@ const routes = createBrowserRouter([
       {
         path: "/",
         element: <Home></Home>,
-        loader: () => fetch("./data.json"),
+        loader: () => fetch("../data.json"),
       },
       {
         path: "/dashboard",
@@ -26,6 +28,14 @@ const routes = createBrowserRouter([
       {
         path: "/help",
         element: <Help></Help>,
+      },
+      {
+        path: "/about",
+        element: <About></About>,
+      },
+      {
+        path: "/details",
+        element: <Details></Details>,
       },
     ],
   },

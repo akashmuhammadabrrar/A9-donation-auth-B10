@@ -1,4 +1,5 @@
 import React from "react";
+import { Link } from "react-router-dom";
 
 const CampaignCard = ({ campaign }) => {
   const { title, image, description, division } = campaign;
@@ -14,9 +15,11 @@ const CampaignCard = ({ campaign }) => {
           Division: <span className="font-bold">{division}</span>
         </p>
         <div className="card-actions justify-start">
-          <button className="btn btn-accent text-slate-50 font-bold">
+          <Link
+            to="/details"
+            className="btn btn-accent text-slate-50 font-bold">
             Donate Now
-          </button>
+          </Link>
         </div>
       </div>
     </div>

@@ -1,4 +1,5 @@
 import React from "react";
+import { Link } from "react-router-dom";
 
 const TopBanner = () => {
   return (
@@ -19,10 +20,14 @@ const TopBanner = () => {
             privilege family. There is not enough food, money,cloths etc.
           </p>
           <div>
-            <button className="btn btn-accent">Donate</button>
-            <button className="btn btn-outline btn-warning ml-2 text-white">
+            <Link to="/details" className="btn btn-accent">
+              Donate
+            </Link>
+            <Link
+              to="/about"
+              className="btn btn-outline btn-warning ml-2 text-white">
               About Our Charity
-            </button>
+            </Link>
           </div>
         </div>
       </div>
