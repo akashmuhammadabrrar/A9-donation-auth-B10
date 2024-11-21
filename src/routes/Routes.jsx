@@ -6,6 +6,9 @@ import Help from "../pages/Help";
 import Campaign from "../pages/Campaign";
 import About from "../pages/About";
 import Details from "../pages/Details";
+import AuthLayout from "../layouts/AuthLayout";
+import Login from "../pages/Login";
+import Register from "../pages/Register";
 
 const routes = createBrowserRouter([
   {
@@ -36,6 +39,21 @@ const routes = createBrowserRouter([
       {
         path: "/details",
         element: <Details></Details>,
+        loader: () => fetch("../data.json"),
+      },
+      {
+        path: "/auth",
+        element: <AuthLayout></AuthLayout>,
+        children: [
+          {
+            path: "/auth/login",
+            element: <Login></Login>,
+          },
+          {
+            path: "/auth/register",
+            element: <Register></Register>,
+          },
+        ],
       },
     ],
   },
