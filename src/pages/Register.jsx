@@ -1,6 +1,7 @@
 import React, { useContext, useState } from "react";
 import { Link, useNavigate } from "react-router-dom";
 import { AuthContext } from "../provider/AuthProvider";
+import { FaGoogle } from "react-icons/fa";
 
 const Register = () => {
   const { createNewUser, setUser, updateUserProfile } = useContext(AuthContext);

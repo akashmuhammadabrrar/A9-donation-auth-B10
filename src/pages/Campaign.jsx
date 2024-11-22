@@ -1,5 +1,6 @@
 import React from "react";
 import CampaignCard from "../components/CampaignCard";
+import imgCamp from "../assets/Image/winter8.jpeg";
 
 const Campaign = ({ campaignData }) => {
   return (
@@ -14,6 +15,22 @@ const Campaign = ({ campaignData }) => {
           at every winter. <br />
           They are seeking for your kind help.
         </p>
+        {/*  */}
+
+        <div className="hero bg-base-200 min-h-screen mt-10">
+          <div className="hero-content flex-col lg:flex-row">
+            <img src={imgCamp} className="max-w-sm rounded-lg shadow-2xl" />
+            <div>
+              <h1 className="text-5xl font-bold">Campaign For Winter Season</h1>
+              <p className="py-6">
+                To this campaign we took the step to donation food and cloths
+                for poor people. Here we encourages other privilege people to
+                help them.
+              </p>
+              <button className="btn btn-accent">See More</button>
+            </div>
+          </div>
+        </div>
       </div>
       <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 mt-20">
         {campaignData?.map((campaign) => (

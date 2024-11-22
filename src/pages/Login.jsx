@@ -1,9 +1,11 @@
 import React, { useContext, useState } from "react";
 import { Link, useLocation, useNavigate } from "react-router-dom";
 import { AuthContext } from "../provider/AuthProvider";
+import { FaGoogle } from "react-icons/fa";
 
 const Login = () => {
-  const { userLogin, setUser } = useContext(AuthContext);
+  const { userLogin, setUser, handleWithGoogleSignIn } =
+    useContext(AuthContext);
   const [error, setError] = useState({});
   const location = useLocation();
   // console.log(location);
@@ -69,6 +71,10 @@ const Login = () => {
           </div>
           <div className="form-control mt-6">
             <button className="btn btn-accent">Login</button>
+            <button onClick={handleWithGoogleSignIn} className="btn btn-ghost">
+              <FaGoogle />
+              Sign In with google
+            </button>
           </div>
           <p className="font-bold text-center p-2">
             Don't Have An Account?{" "}

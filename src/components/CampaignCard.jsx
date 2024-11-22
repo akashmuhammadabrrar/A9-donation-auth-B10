@@ -1,10 +1,11 @@
 import React from "react";
 import { Link } from "react-router-dom";
+import "animate.css";
 
 const CampaignCard = ({ campaign }) => {
   const { title, image, description, division } = campaign;
   return (
-    <div className="card card-compact bg-base-100 w-72 container mx-auto shadow-xl  ">
+    <div className="animate__animated animate__bounce card card-compact bg-base-100 w-72 container mx-auto shadow-xl  ">
       <figure>
         <img src={image} alt={campaign.image} />
       </figure>

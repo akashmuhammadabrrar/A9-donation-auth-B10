@@ -10,6 +10,7 @@ import AuthLayout from "../layouts/AuthLayout";
 import Login from "../pages/Login";
 import Register from "../pages/Register";
 import PrivetRoute from "./PrivetRoute";
+import ErrorPage from "../pages/ErrorPage";
 
 const routes = createBrowserRouter([
   {
@@ -65,6 +66,11 @@ const routes = createBrowserRouter([
         ],
       },
     ],
+  },
+
+  {
+    path: "*",
+    element: <ErrorPage></ErrorPage>,
   },
 ]);
 

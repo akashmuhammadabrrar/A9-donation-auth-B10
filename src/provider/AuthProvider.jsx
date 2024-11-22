@@ -5,9 +5,11 @@ import {
   getAuth,
   onAuthStateChanged,
   signInWithEmailAndPassword,
+  signInWithPopup,
   signOut,
   updateProfile,
 } from "firebase/auth";
+import { GoogleAuthProvider } from "firebase/auth";
 
 export const AuthContext = createContext();
 const auth = getAuth(app);
@@ -22,6 +24,19 @@ const AuthProvider = ({ children }) => {
 
     return createUserWithEmailAndPassword(auth, email, password);
   };
+  // sign in with google
+  const provider = new GoogleAuthProvider();
+
+  const handleWithGoogleSignIn = () => {
+    signInWithPopup(auth, provider)
+      .then((result) => {
+        console.log(result);
+      })
+      .catch((error) => {
+        console.log(error);
+      });
+  };
+
   //   sign in with email and password (login)
   const userLogin = (email, password) => {
     setLoader(true);
@@ -47,6 +62,7 @@ const AuthProvider = ({ children }) => {
     userLogin,
     loader,
     updateUserProfile,
+    handleWithGoogleSignIn,
   };
   //   observer function
   useEffect(() => {
