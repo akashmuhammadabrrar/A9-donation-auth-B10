@@ -13,6 +13,10 @@ This website is made for providing service to the under privilege people by dona
 - Use state and useEffect hooks
 - Javascript collaborated with other library (daisyUI,Animate.css,etc)
 
+#### Note
+
+If we reload the page we can see the animation.
+
 ### Live Link Deploy On Firebase:
 
 - [Donation Now](https://donation-cloths-auth.web.app/)
