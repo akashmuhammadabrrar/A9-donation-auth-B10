@@ -1,5 +1,5 @@
 import React, { useContext } from "react";
-import { FaHeart } from "react-icons/fa";
+import logo from "../assets/logo/logo.png";
 import { Link } from "react-router-dom";
 import { AuthContext } from "../provider/AuthProvider";
 
@@ -8,7 +8,7 @@ const Navbar = () => {
   return (
     <div className="navbar bg-accent fixed z-50">
       <div className="navbar-start">
-        <div>{user && user?.email}</div>
+        <div>{user && user?.email.slice(0, 6)}</div>
         <div className="dropdown">
           <div tabIndex={0} role="button" className="btn btn-ghost lg:hidden">
             <svg
@@ -51,7 +51,7 @@ const Navbar = () => {
           </ul>
         </div>
         <Link className="btn btn-ghost text-xl">
-          Donate <FaHeart className="text-red-600" />
+          Donate <img className="w-8" src={logo} alt="" />
           Now
         </Link>
       </div>

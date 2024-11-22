@@ -5,7 +5,7 @@ import DetailCard from "../components/DetailCard";
 const Details = () => {
   const data = useLoaderData();
   const { image } = data;
-  console.log(data);
+  // console.log(data);
   return (
     <div>
       <h2>This is details campaign</h2>

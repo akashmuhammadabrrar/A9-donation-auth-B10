@@ -5,12 +5,12 @@ import { initializeApp } from "firebase/app";
 
 // Your web app's Firebase configuration
 const firebaseConfig = {
-  apiKey: "AIzaSyA6b8GleebRFLvQVZfR33nYaL_WSKpxWiE",
-  authDomain: "donation-cloths-auth.firebaseapp.com",
-  projectId: "donation-cloths-auth",
-  storageBucket: "donation-cloths-auth.firebasestorage.app",
-  messagingSenderId: "691544777371",
-  appId: "1:691544777371:web:50b9a7d49f928893bf5c3e",
+  apiKey: import.meta.env.VITE_apiKey,
+  authDomain: import.meta.env.VITE_authDomain,
+  projectId: import.meta.env.VITE_projectId,
+  storageBucket: import.meta.env.VITE_storageBucket,
+  messagingSenderId: import.meta.env.VITE_messagingSenderId,
+  appId: import.meta.env.VITE_appId,
 };
 
 // Initialize Firebase

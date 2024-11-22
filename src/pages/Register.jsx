@@ -19,7 +19,7 @@ const Register = () => {
     const email = form.get("email");
     const password = form.get("password");
     const photo = form.get("photo");
-    console.log({ name, email, password, photo });
+    // console.log({ name, email, password, photo });
 
     createNewUser(email, password)
       .then((result) => {
@@ -30,13 +30,13 @@ const Register = () => {
             navigate("/");
           })
           .catch((err) => {
-            console.log(err);
+            // console.log(err);
           });
       })
       .catch((error) => {
         const errorCode = error.code;
         const errorMessage = error.message;
-        console.log(errorCode, errorMessage);
+        // console.log(errorCode, errorMessage);
       });
   };
 

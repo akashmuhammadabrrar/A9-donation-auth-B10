@@ -9,7 +9,7 @@ const Home = () => {
   const notify = () => toast("Wow so easy !");
 
   const campaignData = useLoaderData();
-  console.log(campaignData);
+  // console.log(campaignData);
   return (
     <div>
       {/* top banner */}
