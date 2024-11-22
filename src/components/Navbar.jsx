@@ -8,7 +8,7 @@ const Navbar = () => {
   return (
     <div className="navbar bg-accent fixed z-50">
       <div className="navbar-start">
-        <div>{user && user.email}</div>
+        <div>{user && user?.email}</div>
         <div className="dropdown">
           <div tabIndex={0} role="button" className="btn btn-ghost lg:hidden">
             <svg
@@ -88,6 +88,10 @@ const Navbar = () => {
         </div>
       ) : (
         <div className="navbar-end">
+          <div>
+            {/* <img src={user && user?.name} alt="" /> */}
+            <p>{user && user?.email}</p>
+          </div>
           <Link to="/auth/login" className="btn btn-accent">
             Login
           </Link>
