@@ -20,7 +20,6 @@ const routes = createBrowserRouter([
       {
         path: "/",
         element: <Home></Home>,
-        loader: () => fetch("../data.json"),
       },
       {
         path: "/dashboard",
@@ -32,7 +31,12 @@ const routes = createBrowserRouter([
       },
       {
         path: "/campaign",
-        element: <Campaign></Campaign>,
+        element: (
+          <PrivetRoute>
+            <Campaign></Campaign>
+          </PrivetRoute>
+        ),
+        loader: () => fetch("../data.json"),
       },
       {
         path: "/help",
@@ -43,13 +47,18 @@ const routes = createBrowserRouter([
         element: <About></About>,
       },
       {
-        path: "/details",
+        path: "/details/:id",
         element: (
           <PrivetRoute>
             <Details></Details>
           </PrivetRoute>
         ),
-        loader: () => fetch("../data.json"),
+        loader: async ({ params }) => {
+          const result = await fetch("/data.json");
+          const data = await result.json();
+          const singleData = data.find((donation) => donation.id == params.id);
+          return singleData;
+        },
       },
       {
         path: "/auth",

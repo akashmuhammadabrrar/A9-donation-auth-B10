@@ -5,6 +5,7 @@ import { FaGoogle } from "react-icons/fa";
 
 const Register = () => {
   const { createNewUser, setUser, updateUserProfile } = useContext(AuthContext);
+
   const navigate = useNavigate();
   const [error, setError] = useState({});
 
@@ -25,14 +26,10 @@ const Register = () => {
     createNewUser(email, password)
       .then((result) => {
         const user = result.user;
+        // console.log(user);
         setUser(user);
-        updateUserProfile({ displayName: name, photoURL: photo })
-          .then(() => {
-            navigate("/");
-          })
-          .catch((err) => {
-            // console.log(err);
-          });
+        updateUserProfile({ displayName: name, photoURL: photo });
+        navigate(location?.state ? location.state : "/");
       })
       .catch((error) => {
         const errorCode = error.code;

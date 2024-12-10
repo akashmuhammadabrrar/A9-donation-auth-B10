@@ -21,7 +21,6 @@ const AuthProvider = ({ children }) => {
 
   const createNewUser = (email, password) => {
     setLoader(true);
-
     return createUserWithEmailAndPassword(auth, email, password);
   };
   // sign in with google
@@ -40,8 +39,7 @@ const AuthProvider = ({ children }) => {
   //   sign in with email and password (login)
   const userLogin = (email, password) => {
     setLoader(true);
-
-    signInWithEmailAndPassword(auth, email, password);
+    return signInWithEmailAndPassword(auth, email, password);
   };
   //   sign out function
   const logOut = () => {
@@ -50,8 +48,8 @@ const AuthProvider = ({ children }) => {
   };
 
   //
-  const updateUserProfile = ({ updatedData }) => {
-    return updateProfile(auth.currentUser, updatedData);
+  const updateUserProfile = (displayName, photoURL) => {
+    return updateProfile(auth.currentUser, displayName, photoURL);
   };
 
   const authInfo = {

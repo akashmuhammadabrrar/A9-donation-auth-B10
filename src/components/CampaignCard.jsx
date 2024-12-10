@@ -3,7 +3,7 @@ import { Link } from "react-router-dom";
 import "animate.css";
 
 const CampaignCard = ({ campaign }) => {
-  const { title, image, description, division } = campaign;
+  const { title, image, description, division, id } = campaign;
   return (
     <div className="animate__animated animate__bounce card card-compact bg-base-100 w-72 container mx-auto shadow-xl  ">
       <figure>
@@ -17,7 +17,7 @@ const CampaignCard = ({ campaign }) => {
         </p>
         <div className="card-actions justify-start">
           <Link
-            to="/details"
+            to={`/details/${id}`}
             className="btn btn-accent text-slate-50 font-bold">
             Donate Now
           </Link>

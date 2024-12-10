@@ -19,12 +19,11 @@ const Login = () => {
     // console.log({ email, password });
     userLogin(email, password)
       .then((result) => {
-        const user = result.user;
-        setUser(user);
+        // console.log(result.user);
         navigate(location?.state ? location.state : "/");
       })
-      .catch((err) => {
-        setError({ ...error, login: err?.code });
+      .catch((error) => {
+        // console.log(error.message);
       });
   };
 
@@ -70,7 +69,10 @@ const Login = () => {
             </label>
           </div>
           <div className="form-control mt-6">
-            <button className="btn btn-accent">Login</button>
+            <button className="btn btn-accent">
+              <Link>Login</Link>
+            </button>
+
             <button onClick={handleWithGoogleSignIn} className="btn btn-ghost">
               <FaGoogle />
               Sign In with google

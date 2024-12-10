@@ -5,6 +5,7 @@ import Campaign from "./Campaign";
 import { useLoaderData } from "react-router-dom";
 import { toast } from "react-toastify";
 import ExtraSection from "../components/ExtraSection";
+import HowItWorks from "../components/HowItWorks";
 
 const Home = () => {
   const notify = () => toast("Wow so easy !");
@@ -19,10 +20,11 @@ const Home = () => {
         <Status></Status>
       </div>
       {/* heading */}
-      {/* campaign */}
-      <div className="mt-10 py-10">
-        <Campaign campaignData={campaignData}></Campaign>
+      {/* main section */}
+      <div className="">
+        <HowItWorks></HowItWorks>
       </div>
+
       <div>
         <ExtraSection></ExtraSection>
       </div>
